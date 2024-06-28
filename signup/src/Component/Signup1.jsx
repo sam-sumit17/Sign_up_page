@@ -18,12 +18,14 @@ export default function signup(){
             [e.target.name]:e.target.value,
         });
     }
+    axios.defaults.withCredentials=true;
+    
     const handleSubmit=async(e)=>{
         e.preventDefault();
         // const x=e.name.value;
         // const y=e.email;
         // { x.length > 0  && alert('enter valid details');}
-        const register=await axios.post("http://localhost:5000/register/",value);
+        const register=await axios.post("https://signuppagebackend-f8qrehwo1-sumit-kumars-projects-32d732da.vercel.app/register/",value);
         //console.log(register.data);
         setValue({
             name:"",
