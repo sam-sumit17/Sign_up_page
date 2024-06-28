@@ -15,13 +15,13 @@ app.use(cors({
 app.use(express.json());
 
 mongoose.connect(MONGB_UR);
-const db=mongoose.connection;
-db.on('error',(err)=>{
-console.error("Mongo Db connection error",err)
-});
-db.once('open',()=>{
-    console.log("MONGO DB CONNECTION SUCCESULL")
-});
+// const db=mongoose.connection;
+// db.on('error',(err)=>{
+// console.error("Mongo Db connection error",err)
+// });
+// db.once('open',()=>{
+//     console.log("MONGO DB CONNECTION SUCCESULL")
+// });
 app.get("/", (req, res) => {
     res.json("Hello");
 })
