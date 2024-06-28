@@ -8,7 +8,7 @@ const bcryptjs=require('bcryptjs');
 
 //mdwillre
 app.use(cors({
-    origin:["https://sign-up-pagep-frontend.vercel.app/"],
+    origin:["https://sign-up-pagep-frontend.vercel.app"],
     methods:["POST","GET"],
     credentials:true,
 }    ));
