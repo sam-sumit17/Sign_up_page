@@ -2,7 +2,7 @@ const express=require('express')
 const mongoose =require('mongoose')
 const cors=require('cors')
 const app=express()
-const MONGB_UR='mongodb+srv://sumit00022171:7Ms2CFNmKBLkrCtx@cluster0.2p6alzj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
+const MONGB_UR='mongodb+srv://sumit00022171:7Ms2CFNmKBLkrCtx@cluster0.2p6alzj.mongodb.net/test?retryWrites=true&w=majority&appName=Cluster0'
 const PORT=5000;
 const bcryptjs=require('bcryptjs');
 
