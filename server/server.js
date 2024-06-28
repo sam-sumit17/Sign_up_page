@@ -2,12 +2,16 @@ const express=require('express')
 const mongoose =require('mongoose')
 const cors=require('cors')
 const app=express()
-const MONGB_UR="mongodb://localhost:27017/signup"
+const MONGB_UR="mongodb+srv://sumit1789:<sumit1789>@sam.45rqd5k.mongodb.net/?retryWrites=true&w=majority&appName=sam"
 const PORT=5000;
 const bcryptjs=require('bcryptjs');
 
 //mdwillre
-app.use(cors());
+app.use(cors({
+    origin:[""],
+    methods:["POST,"GET"],
+    credentials:true
+}    ));
 app.use(express.json());
 
 mongoose.connect(MONGB_UR);
