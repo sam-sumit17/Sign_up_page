@@ -15,7 +15,8 @@ app.use(cors({
 app.use(express.json());
 
 mongoose.connect(MONGB_UR);
-app.get("/",(req,res)=>{
+
+app.get("/", (req, res) => {
     res.json("Hello");
 })
 const db=mongoose.connection;
