@@ -3,7 +3,7 @@ const mongoose =require('mongoose')
 const cors=require('cors')
 const app=express()
 const MONGB_UR="mongodb+srv://sumit1789:<sumit1789>@sam.45rqd5k.mongodb.net/?retryWrites=true&w=majority&appName=sam"
-const PORT=5000;
+// const PORT=5000;
 const bcryptjs=require('bcryptjs');
 
 //mdwillre
@@ -59,4 +59,4 @@ app.post('/register',async(req,res)=>{
         });
     }
 });
-app.listen(PORT)
+// app.listen(PORT)
