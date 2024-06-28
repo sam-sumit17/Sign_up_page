@@ -10,7 +10,7 @@ const PORT=5000;
 app.use(cors({
     origin:["https://sign-up-pagep-frontend.vercel.app"],
     methods:["POST","GET"],
-    credentials:true,
+    credentials:true
 }    ));
 app.use(express.json());
 
