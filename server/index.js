@@ -14,7 +14,7 @@ app.use(cors({
 }    ));
 app.use(express.json());
 
-mongoose.connect(MONGB_UR);
+mongoose.connect('mongodb+srv://yousaf:test123@cluster0.g4i5dey.mongodb.net/test?retryWrites=true&w=majority');
 const db=mongoose.connection;
 db.on('error',(err)=>{
 console.error("Mongo Db connection error",err)
