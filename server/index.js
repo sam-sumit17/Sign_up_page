@@ -7,11 +7,11 @@ const PORT=5000;
 //const bcryptjs=require('bcryptjs');
 
 //mdwillre
-// app.use(cors({
-//     origin:["https://sign-up-pagep-frontend.vercel.app"],
-//     methods:["POST","GET"],
-//     credentials:true
-// }    ));
+app.use(cors({
+    origin:["https://sign-up-pagep-frontend.vercel.app"],
+    methods:["POST","GET"],
+    credentials:true
+}    ));
 app.use(express.json());
 
 mongoose.connect('mongodb+srv://sam:sam1712@cluster0.2p6alzj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0');
