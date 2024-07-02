@@ -5,9 +5,6 @@ const app=express()
 const MONGB_UR='mongodb://localhost:27017/signup'
 const PORT=5000;
 const bcryptjs=require('bcryptjs');
-
-//mdwillre
- // app.use(cors())
 app.use(cors({
     origin:["https://sign-up-pagep-frontend.vercel.app"],
     methods:["POST","GET"],
@@ -40,16 +37,15 @@ const userSchema= new mongoose.Schema({
 const User=mongoose.model('User',userSchema)
 
 app.post('/register',async(req,res)=>{
-    // if(req.name.length>0)alert('ok');
     try{
-       const hasspassword=await bcryptjs.hashSync(req.body.password,10);
+       const hasspassword= bcryptjs.hashSync(req.body.password,10);
         const newUser=new User({
             name: req.body.name,
             email: req.body.email,
             dob:req.body.dob,
             password:hasspassword,            
         });
-        const savedUser=await newUser.save();
+        const savedUser= newUser.save();
         res.status(201).json(savedUser);
     }
     catch(error){
