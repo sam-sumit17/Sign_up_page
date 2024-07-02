@@ -4,7 +4,7 @@ const cors=require('cors')
 const app=express()
 const MONGB_UR='mongodb://localhost:27017/signup'
 const PORT=5000;
-//const bcryptjs=require('bcryptjs');
+const bcryptjs=require('bcryptjs');
 
 //mdwillre
 // app.use(cors())
@@ -41,12 +41,12 @@ const User=mongoose.model('User',userSchema)
 app.post('/register',async(req,res)=>{
     // if(req.name.length>0)alert('ok');
     try{
-      //  const hasspassword=await bcryptjs.hashSync(req.body.password,10);
+        const hasspassword=await bcryptjs.hashSync(req.body.password,10);
         const newUser=new User({
             name: req.body.name,
             email: req.body.email,
             dob:req.body.dob,
-            password:req.body.password,            
+            password:hasspassword,            
         });
         const savedUser=await newUser.save();
         res.status(201).json(savedUser);
