@@ -25,7 +25,7 @@ export default function signup(){
         // const x=e.name.value;
         // const y=e.email;
         // { x.length > 0  && alert('enter valid details');}
-        const register=await axios.post('https://sign-up-backend.vercel.app/register',value);
+        const register=await axios.post("https://sign-up-backend.vercel.app/register",value);
         //console.log(register.data);
         setValue({
             name:"",
