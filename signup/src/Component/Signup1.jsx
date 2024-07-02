@@ -1,5 +1,11 @@
 import React,{useState} from "react"
 import axios from 'axios'
+function isEmpty(value) {
+    return (value == null || (typeof value === "string" && value.trim().length === 0));
+  }
+  function isPass(value) {
+    return ((typeof value === "string" && value.trim().length < 8));
+  }
 
 export default function signup(){
     const [value,setValue]=useState({
@@ -19,6 +25,13 @@ export default function signup(){
     
     const handleSubmit=async(e)=>{
         e.preventDefault();
+          
+        if(isEmpty(value.name)){alert('Invalid name');return ;}
+        if(isEmpty(value.email)){alert('Invalid Email');return ;}
+        if(isEmpty(value.dob)){alert('Invalid Date of Birth');return ;}
+        if(isEmpty(value.password)){alert('Invalid Password');return ;}
+        if(isPass(value.password)){alert('Password length should be minimum 8 characters');return ;}
+
         const register=await axios.post("https://sign-up-backend.vercel.app/register",value);
         setValue({
             name:"",
