@@ -2,20 +2,22 @@ const express=require('express')
 const mongoose =require('mongoose')
 const cors=require('cors')
 const app=express()
-const MONGB_UR='mongodb+srv://sumit00022171:sumit00022171@cluster0.2p6alzj.mongodb.net/same?retryWrites=true&w=majority&appName=Cluster0'
+const MONGB_UR='mongodb://localhost:27017/signup'
 const PORT=5000;
 //const bcryptjs=require('bcryptjs');
 
 //mdwillre
-// app.use(cors({
-//     origin:["https://sign-up-pagep-frontend.vercel.app"],
-//     methods:["POST","GET"],
-//     credentials:true
-// }    ));
+// app.use(cors())
+app.use(cors({
+    origin:["https://sign-up-pagep-frontend.vercel.app"],
+    methods:["POST","GET"],
+    credentials:true
+}    ));
 app.use(express.json());
 
-mongoose.connect('mongodb+srv://sam:sam1712@cluster0.2p6alzj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0');
+mongoose.connect('mongodb+srv://sam:sam1712@user.lqnkuu8.mongodb.net/?retryWrites=true&w=majority&appName=User');
 const db=mongoose.connection;
+
 db.on('error',(err)=>{
 console.error("Mongo Db connection error",err)
 });
