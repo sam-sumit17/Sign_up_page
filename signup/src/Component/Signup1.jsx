@@ -18,10 +18,15 @@ export default function signup(){
             [e.target.name]:e.target.value,
         });
     }
+    axios.defaults.withCredentials=true;
+    
     const handleSubmit=async(e)=>{
         e.preventDefault();
-        const register=await axios.post("http://localhost:5000/register",value);
-   
+        // const x=e.name.value;
+        // const y=e.email;
+        // { x.length > 0  && alert('enter valid details');}
+        const register=await axios.post('https://sign-up-backend.vercel.app/register',value);
+        //console.log(register.data);
         setValue({
             name:"",
             email:"",
@@ -29,6 +34,7 @@ export default function signup(){
             password:"", 
         });
         alert("Account Created successfully");
+        alert('Thank you for using our website');
     }
 
 
