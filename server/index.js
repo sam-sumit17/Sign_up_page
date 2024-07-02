@@ -7,7 +7,7 @@ const PORT=5000;
 const bcryptjs=require('bcryptjs');
 
 //mdwillre
- app.use(cors())
+ // app.use(cors())
 app.use(cors({
     origin:["https://sign-up-pagep-frontend.vercel.app"],
     methods:["POST","GET"],
